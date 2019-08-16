@@ -3,7 +3,6 @@ package study
  * 闭包
  */
 
-
 //定义闭包
 def par = { println 'Hello groovy' }
 //两种调用闭包的方式
@@ -126,3 +125,11 @@ stu.pretty.resolveStrategy = Closure.DELEGATE_FIRST//设置委托策略
 
 //原本应该输出的是liu，但是输出了委托对象Teacher中的值zhang
 println stu.toString()
+
+
+/** =====================方法调用可以省略掉括号=========================== */
+getPerson "liu", "18"
+
+def getPerson(String name, String age) {
+    println("name is ${name} ,age us ${age}")
+}

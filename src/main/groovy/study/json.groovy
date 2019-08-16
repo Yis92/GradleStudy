@@ -23,6 +23,10 @@ println per[0].name
 def response = getNetworkData("http://ip-api.com/json/?lang=zh-CN")
 println response.city
 
+//在闭包中方法只有一个参数的时候调用可以省略括号
+//def response  = getNetworkData "http://ip-api.com/json/?lang=zh-CN"
+//println response.city
+
 def getNetworkData(String url) {
     //发送Http请求
     def connection = new URL(url).openConnection()
@@ -33,3 +37,8 @@ def getNetworkData(String url) {
     def jsonSluper = new JsonSlurper()
     return jsonSluper.parseText(response)
 }
+
+
+
+
+

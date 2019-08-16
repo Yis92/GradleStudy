@@ -3,7 +3,6 @@ package study
  * 定义变量
  */
 
-
 /**
  * 强类型定义，申明的时候使用关键字指明变量类型
  * 基本类型的变量都会被转换成包装类对象类型
@@ -95,6 +94,14 @@ for (ii in [1, 2, 3, 4, 5, 6, 7]) {
  */
 for (iii in ['a': 1, 'b': 2, 'c': 3]) {
     sum += iii.value
+}
+
+/** =====================方法调用可以省略掉括号=========================== */
+getPerson  "liu", "18"
+
+def getPerson(String name, String age) {
+
+    println("name is ${name} ,age us ${age}")
 }
 
 
