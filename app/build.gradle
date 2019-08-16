@@ -1,4 +1,4 @@
-group 'com.study'
+group rootProject.appModuleName
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
@@ -12,3 +12,25 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+//文件拷贝
+//copy {
+//    //from:来源
+//    from file('yis.jks')
+//    //into 拷贝到哪里
+//    into getRootDir()
+//    //拷贝排除
+//    exclude {}
+//    //拷贝重命名
+//    rename {}
+//}
+
+//对文件树进行遍历
+//fileTree(getRootDir()) {
+//    FileTree fileTree ->
+//        fileTree.visit {
+//            FileTreeElement fileTreeElement ->
+//                println 'the file name is :' + fileTreeElement.file.name
+//        }
+//}
+
