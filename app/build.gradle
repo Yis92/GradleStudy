@@ -34,3 +34,20 @@ dependencies {
 //        }
 //}
 
+//外部命令，将项目中文件拷贝到电脑磁盘中，此task有异常
+//task(name :'apkcopy'){
+//    doLast {
+//        def sourcePath = 'yis.jks'
+//        def desationPath ='/Users/yis/Downloads/'
+//        def command = "mv -f ${sourcePath} ${desationPath}"
+//        exec {
+//            try{
+//                executable 'bash'
+//                args '-c',command
+//                println 'the command is execute success.'
+//            }catch (GradleException e){
+//                println 'the command is execute failed.'
+//            }
+//        }
+//    }
+//}
