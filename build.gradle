@@ -33,7 +33,7 @@ this.gradle.buildFinished {
     println '执行阶段执行完毕...'
 }
 ext {
-    appModuleName  = 'com.study'
+    appModuleName = 'com.study'
 }
 
 //根工程路径
@@ -42,3 +42,29 @@ println getRootDir().absolutePath
 println getBuildDir().absolutePath
 //当前工程路径
 println getProjectDir().absolutePath
+
+buildscript {
+    ScriptHandler scriptHandler ->
+        //配置我们工程的仓库地址
+        scriptHandler.repositories {
+            RepositoryHandler repositories ->
+                jcenter()
+                mavenCentral()
+                maven {
+                    name 'dy'
+                    url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories/"
+                    credentials {
+                        username = 'liu'
+                        password = 'liu123'
+                    }
+                }
+        }
+
+        //配置我们工程的"插件'依赖地址
+        scriptHandler.dependencies {
+
+        }
+}
+
+
+
