@@ -32,3 +32,13 @@ this.afterEvaluate {
 this.gradle.buildFinished {
     println '执行阶段执行完毕...'
 }
+ext {
+    appModuleName  = 'com.study'
+}
+
+//根工程路径
+println getRootDir().absolutePath
+//当前工程build路径
+println getBuildDir().absolutePath
+//当前工程路径
+println getProjectDir().absolutePath
