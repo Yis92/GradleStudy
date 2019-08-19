@@ -1,0 +1,22 @@
+/**
+ * 创建 Task 的两种方式
+ **/
+
+//直接通过task函数去创建
+task helloTask(group: 'hello', description: "hello模块") {
+
+    println 'this is helloTask'
+
+    doFirst{
+        println 'this is helloTask'
+    }
+}
+
+//通过TaskContainer去创建Task
+this.tasks.create(name: 'helloTask2') {
+    doLast {
+        setGroup('hello')
+        setDescription('hello模块')
+        println 'this is helloTask2'
+    }
+}

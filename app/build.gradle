@@ -2,6 +2,7 @@ group rootProject.appModuleName
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply from: 'mytask.gradle'
 
 sourceCompatibility = 1.8
 
