@@ -7,7 +7,7 @@ task helloTask(group: 'hello', description: "hello模块") {
 
     println 'this is helloTask'
 
-    doFirst{
+    doFirst {
         println 'this is helloTask'
     }
 }
@@ -18,5 +18,69 @@ this.tasks.create(name: 'helloTask2') {
         setGroup('hello')
         setDescription('hello模块')
         println 'this is helloTask2'
+    }
+}
+
+//计算build执行时常-代码在Android studio 中执行
+//def startBuildTime, endBuildTime
+//this.afterEvaluate {Project pro ->
+//    def preBuildTask = pro.tasks.getByName('Load build')
+//    preBuildTask.doFirst {
+//        startBuildTime = System.currentTimeMillis()
+//        println 'the start time is :' + startBuildTime
+//    }
+//
+//    def buildTask = pro.tasks.getByName('build')
+//    buildTask.doLast {
+//        endBuildTime = System.currentTimeMillis()
+//        println "the build time is :${endBuildTime - startBuildTime}"
+//    }
+//}
+
+//task依赖dependsOn
+task X {
+    doLast {
+        println 'my name is X'
+    }
+}
+
+task Y {
+    doLast {
+        println 'my name is Y'
+    }
+}
+
+task Z(dependsOn: [X, Y]) {
+    doLast {
+        println 'my name is Z'
+    }
+}
+
+//动态依赖
+task lib1 {
+    doLast {
+        println 'my name is lib1'
+    }
+}
+
+task lib2 {
+    doLast {
+        println 'my name is lib2'
+    }
+}
+
+task onLib {
+    doLast {
+        println 'my name is onLib'
+    }
+}
+
+task taskLib {
+
+    dependsOn this.tasks.findAll {
+        it.name.startsWith('lib')
+    }
+    doLast {
+        println 'this name is taskLib'
     }
 }
