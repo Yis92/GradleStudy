@@ -52,3 +52,19 @@ dependencies {
 //        }
 //    }
 //}
+
+//计算build执行时常-代码在Android studio 中执行
+//def startBuildTime, endBuildTime
+//this.afterEvaluate {Project pro ->
+//    def preBuildTask = pro.tasks.getByName('Load build')
+//    preBuildTask.doFirst {
+//        startBuildTime = System.currentTimeMillis()
+//        println 'the start time is :' + startBuildTime
+//    }
+//
+//    def buildTask = pro.tasks.getByName('build')
+//    buildTask.doLast {
+//        endBuildTime = System.currentTimeMillis()
+//        println "the build time is :${endBuildTime - startBuildTime}"
+//    }
+//}
