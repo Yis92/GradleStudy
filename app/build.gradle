@@ -68,3 +68,20 @@ dependencies {
 //        println "the build time is :${endBuildTime - startBuildTime}"
 //    }
 //}
+
+//修改默认加载位置
+sourceSets {
+    main {
+        //修改so库的存放位置
+        jniLIbs.srcDirs = ['libs']
+    }
+}
+
+//修改Android项目中默认可加载的资源文件路径
+sourceSets {
+    main {
+        res.srcDirs = ['src/main/res',
+                       'src/main/res-ad',
+                       'src/main/res-player']
+    }
+}
