@@ -1,0 +1,16 @@
+//修改 Android 输出的 apk 文件路径
+this.afterEvaluate {
+    this.android.applicationVariants.all { variant ->
+//        variant.outputs.each { output ->
+        //拷贝自销售助手项目
+//            def file = new File(project.rootDir.absolutePath + File.separator + "a_outputs")
+//            def filename = "addressbook.apk"
+//            output.outputFile = new File(file, filename)
+//        }
+        //来自慕课网视频
+//        def output = variant.outputs.first()
+//        def apkName = "app-${variant.baseName}"+"-${variant.versionName}.apk"
+//        output.outputFile = new File(output.outputFile.parent,apkName)
+//        println output.outputFile.name
+    }
+}
